@@ -6,6 +6,7 @@ export default function countriesCard ({id, name, imgbandera, Continente, capita
 
         <div className={style.card}>
             <img className={style.img} src={imgbandera} alt='some value'  width="150px" height="150px"/>
+            <div className={style.contenido}>
             <h1 className={style.h1}>{name} </h1>
             <h5 className={style.h5}>Id: {id}</h5>
             <h5 className={style.h5}>Continente: {Continente} </h5>
@@ -13,6 +14,7 @@ export default function countriesCard ({id, name, imgbandera, Continente, capita
             <h5 className={style.h5}>Subregion: {Subregion} </h5>
             <h5 className={style.h5}>Area: {area} </h5>
             <h5 className={style.h5}>Poblacion: {Poblacion} </h5>
+            </div>
         </div>
     );
 }

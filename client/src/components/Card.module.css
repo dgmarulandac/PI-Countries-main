@@ -1,10 +1,11 @@
 .container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  ;
+    gap: 10px;
     margin: 20px;
     justify-content: space-around;
-    
+    position: relative;
+    align-items: center;
     
 }
 
@@ -19,16 +20,28 @@
    font-size: 20px;
    color: #000;
    text-underline-offset: none;
+   
 
 }
 
+.contenido{
+    background-color: rgba(240, 248, 255, 0.569);
+    border-radius: 20px;
+    flex-direction: column;
+    width: 250px;
+    height: 190px;
+    align-items: center;
+    text-align: center;
+    
+}
+
 .h5{
-    color: aliceblue;
+    color: rgb(6, 6, 6);
     margin-top: 1px;
     line-height: 1%;
-    text-shadow: #000;
     text-decoration-line: none;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 .card{

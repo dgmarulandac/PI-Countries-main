@@ -1,6 +1,7 @@
 body {
     background-image: url('../img/Fondo_LandingPage.jpg');
-    background-size: 100%;
+    background-size: cover;
+    
 }
 
 

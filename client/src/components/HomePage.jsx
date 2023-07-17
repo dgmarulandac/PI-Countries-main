@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import Card from "./Card";
 import Paginado from "./Paginado";
 import style from "./Card.module.css";
+import styles from "./Home.module.css";
 
 
 export default function Home(){
@@ -13,10 +14,11 @@ export default function Home(){
     const allCountries = useSelector((state) =>state.countries);
     
     const [currentPage, setCurrentPage] = useState(1);
-    const [countriesPerPage, setCountriesPerPage] = useState(10);
-    const indexLastCountrie = currentPage * countriesPerPage 
-    const indexOffFirstCountrie = indexLastCountrie - countriesPerPage 
+    const [countriesPerPage] = useState(10);
+    const indexLastCountrie = currentPage * countriesPerPage; 
+    const indexOffFirstCountrie = indexLastCountrie - countriesPerPage; 
     const currentCountries = allCountries.slice(indexOffFirstCountrie, indexLastCountrie)
+   
 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -34,7 +36,7 @@ export default function Home(){
     }
 
     return(
-        <div>
+        <div className={styles.Home}>
            <Link to= '/activities'>Crear actividad</Link> 
            <h1>AGUANTE PAISES</h1>
            <button onClick={e => {handleClick(e)}}>
@@ -59,14 +61,16 @@ export default function Home(){
                 <option value="continents">Continente</option>
                 <option value="Activity">Actividad Turistica</option>
             </select>
+            <hr></hr>
 
+           
             <Paginado
-
-             countriesPerPage={countriesPerPage}
-             allCountries={allCountries.lenght}
-             paginado={paginado}
-            />
             
+            countriesPerPage={countriesPerPage}
+            allCountries={allCountries.length}
+            paginado={paginado}
+           />
+
             <hr></hr>
 
             <div className={style.container}>
@@ -96,6 +100,7 @@ export default function Home(){
                 })
             }
         </div>  
+
             
            </div>
         </div>
