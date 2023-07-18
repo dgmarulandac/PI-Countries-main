@@ -1,7 +1,7 @@
 import  React from "react";
 import { useState, useEffect } from "react";
 import {useDispatch , useSelector} from 'react-redux';
-import { getCountries } from "../actions";
+import { getCountries, filterCountriesByContinent, filterCountriesByActivity} from "../actions";
 import {Link} from 'react-router-dom';
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -11,7 +11,9 @@ import styles from "./Home.module.css";
 
 export default function Home(){
     const dispatch =useDispatch();
+    const activities = useSelector((state) =>state.activities);
     const allCountries = useSelector((state) =>state.countries);
+    
     
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage] = useState(10);
@@ -35,6 +37,16 @@ export default function Home(){
         dispatch(getCountries());
     }
 
+    function handleFilterContinent(e) {
+        dispatch(filterCountriesByContinent(e.target.value));
+        setCurrentPage(1);
+      }
+
+    function handleFilterActivity(e){
+        dispatch(filterCountriesByActivity(e.target.value));
+        setCurrentPage(1);
+    }
+
     return(
         <div className={styles.Home}>
            <Link to= '/activities'>Crear actividad</Link> 
@@ -54,14 +66,26 @@ export default function Home(){
                 <option value='name'>Nombre</option>
                 <option value='population'>Cantidad Poblacion</option>
             </select>
+
+            <select className='filterAndOrder' onChange={(e) => handleFilterActivity(e)}>
+                <option value="todos"> Actividades </option>
+                {activities.map((v) => (
+                    <option value={v.name}>{v.name}</option>
+                ))}
+            </select>
             
 
-
-            <select>
-                <option value="continents">Continente</option>
-                <option value="Activity">Actividad Turistica</option>
-            </select>
-            <hr></hr>
+        <select onChange={(e) => handleFilterContinent(e)}>
+          <option value="continent">Continentes</option>
+          <option value="All">Todos</option>
+          <option value="Africa">Africa</option>
+          <option value="Antarctica">Antartida</option>
+          <option value="North America">America del Norte</option>
+          <option value="South America">America del Sur</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europa</option>
+          <option value="Oceania">Oceania</option>
+        </select>
 
            
             <Paginado
@@ -85,12 +109,7 @@ export default function Home(){
                     <Card
                     imgbandera = {el.imgbandera} 
                     name = {el.name} 
-                    id = {el.id} 
                     Continente = {el.continente} 
-                    capital = {el.capital} 
-                    Subregion = {el.subregion}              
-                    area = {el.area}
-                    Poblacion = {el.poblacion}
                     />
                     </Link>
                     </fragment>

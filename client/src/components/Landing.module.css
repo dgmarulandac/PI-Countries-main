@@ -1,6 +1,12 @@
-body {
+.landingPage {
     background-image: url('../img/Fondo_LandingPage.jpg');
-    background-size: cover;
+    background-position: center center;
+    background-size: 100%;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
     
 }
 
@@ -8,16 +14,18 @@ body {
 .Title{
     text-align: right;
     vertical-align: auto;
-    margin-top: 200px;
-    margin-right: 13%;
+    margin-top: 300px;
+    margin-left: 70%;
     color: #fdfdfd;
 
 }
 
 .button {
     cursor: pointer;
-    position: relative;
-    left: 30%;
+    position: absolute;
+    margin-top: 400px;
+    margin-left: 45%;
+    left: 30%;    
     padding: 10px 24px;
     font-size: 18px;
     color: rgb(255, 255, 255);
