@@ -1,7 +1,8 @@
 const initialState = {
     countries : [],
     allCountries: [],
-    activities: [],
+    
+    
     
 }
 
@@ -13,30 +14,84 @@ function rootReducer (state = initialState, action){
                 countries:action.payload,
                 allCountries: action.payload
             }
-            case 'FILTER_BY_CONTINENT':
+        case 'FILTER_BY_CONTINENT':
                 const allCountries = state.allCountries
                 const statusFiltered = action.payload === 'All' ? allCountries : allCountries.filter(el => el.continente === action.payload)
-                return{
+            return{
                     ...state,
                     countries: statusFiltered
                 }
-                case 'FILTER_BY_ACTIVITIES':
-                    const filtredCountriesByActivities = state.allCountries
-                    const continentFilteredBA = filtredCountriesByActivities.filter((c) => { return c.activities.find((c) => { return c.name === action.payload; }); });
 
-                    if (action.payload === 'todos') {
-                        return { ...state, countries: filtredCountriesByActivities }
-                    } else {
-                        return {
-                            ...state,
-                            countries: continentFilteredBA
-                        }
+        case 'FILTER_BY_ACTIVITIES':
+                const allCountries1 = state.allCountries
+                const activitiesFiltered = action.payload === 'All' ? allCountries1 : allCountries1.filter((el) => { return el.activities.find((c) => { return c.name === action.payload; }); });
+            return{
+                    ...state,
+                    countries: activitiesFiltered
+                }
+
+        case 'ORDER_BY_NAME':
+            let sortArr = action.payload === 'asc' ?
+                state.countries.sort(function(a,b){
+                    if (a.name > b.name){
+                        return 1;
                     }
+                    if (b.name > a.name){
+                        return -1;
+                    }
+                    return 0;
+                }):
+                state.countries.sort(function(a,b){
+                    if (a.name > b.name){
+                        return -1;
+                    }
+                    if (b.name > a.name){
+                        return 1;
+                    }
+                    return 0; 
+                });
+                return{
+                    ...state,
+                    countries: sortArr
+                }    
+                
+        case 'ORDER_BY_POPULATION':
+
+                let sortPopulation = action.payload === 'Mayor' ?
+                state.countries.sort(function(a,b){
+                    if (a.poblacion > b.poblacion){
+                        return -1;
+                    }
+                    if (b.poblacion > a.poblacion){
+                        return 1;
+                    }
+                    return 0;
+                }):
+                state.countries.sort(function(a,b){
+                    if (a.poblacion > b.poblacion){
+                        return 1;
+                    }
+                    if (b.poblacion > a.poblacion){
+                        return -1;
+                    }
+                    return 0; 
+                });
+                return{
+                    ...state,
+                    countries: sortPopulation
+                }  
+              
+                        
+                
+        
                 
             default:
                 return state;
+
+                
     }
 
 }
+
 
 export default rootReducer;

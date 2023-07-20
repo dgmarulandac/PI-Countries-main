@@ -39,6 +39,37 @@ export function orderByPopulation(payload) {
     }
 }
 
+/*
+export function getActivities() {
+    return async function (dispatch) {
+        try {
+            let json = await axios.get('http://localhost:3001/activity');
+            return dispatch({
+                type: 'GET_ACTIVITIES',
+                payload: json.data
+            })
+        } catch (error) {
+            alert('No hay actividades')
+            console.log(error)
+        }
+    }
+}*/
+
+/*
+export function orderByName(payload) {
+    return {
+        type: 'ORDER_BY_NAME',
+        payload
+    }
+}
+
+export function orderByPopulation(payload) {
+    return {
+        type: 'ORDER_BY_POPULATION',
+        payload
+    }
+}
+
 export function getActivities() {
     return async function (dispatch) {
         try {
@@ -82,5 +113,5 @@ export function restartDetail() {
         dispatch({ type: 'RESET' })
     }
 }
-
+*/
 

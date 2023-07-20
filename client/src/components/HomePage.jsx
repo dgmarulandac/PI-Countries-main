@@ -1,7 +1,7 @@
 import  React from "react";
 import { useState, useEffect } from "react";
 import {useDispatch , useSelector} from 'react-redux';
-import { getCountries, filterCountriesByContinent, filterCountriesByActivity} from "../actions";
+import { getCountries, getActivities, orderByName, orderByPopulation, filterCountriesByContinent, filterCountriesByActivity} from "../actions";
 import {Link} from 'react-router-dom';
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -11,15 +11,16 @@ import styles from "./Home.module.css";
 
 export default function Home(){
     const dispatch =useDispatch();
-    const activities = useSelector((state) =>state.activities);
+    //const allactivities = useSelector((state) =>state.activities);
     const allCountries = useSelector((state) =>state.countries);
-    
-    
+    const [orden, setOrder] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage] = useState(10);
     const indexLastCountrie = currentPage * countriesPerPage; 
     const indexOffFirstCountrie = indexLastCountrie - countriesPerPage; 
     const currentCountries = allCountries.slice(indexOffFirstCountrie, indexLastCountrie)
+
+
    
 
     const paginado = (pageNumber) => {
@@ -29,24 +30,37 @@ export default function Home(){
 
     useEffect (() =>{
         dispatch(getCountries());
-
+        
     },[dispatch])
 
     function handleClick(e){
         e.preventDefault();
         dispatch(getCountries());
-    }
+    };
 
     function handleFilterContinent(e) {
         dispatch(filterCountriesByContinent(e.target.value));
         setCurrentPage(1);
-      }
+      };
 
     function handleFilterActivity(e){
         dispatch(filterCountriesByActivity(e.target.value));
         setCurrentPage(1);
-    }
+    };
 
+    function handleSortName (e){
+        e.preventDefault();
+        dispatch(orderByName(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Ordenado ${e.target.value}`);
+    };
+
+    function handleSortPopulation (e){
+        e.preventDefault();
+        dispatch(orderByPopulation(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Ordenado ${e.target.value}`);
+    };
     return(
         <div className={styles.Home}>
            <Link to= '/activities'>Crear actividad</Link> 
@@ -57,22 +71,24 @@ export default function Home(){
 
            <div>
             
-            <select>
+            <select onChange={(e) => handleSortName(e)}>
+                <option>Ordenar Paises por Nombre</option>
                 <option value='asc'>Ascendente</option>
                 <option value='des'>Descendente</option>
             </select>
 
-            <select>
-                <option value='name'>Nombre</option>
-                <option value='population'>Cantidad Poblacion</option>
+            <select onChange={(e) => handleSortPopulation(e)}>
+                <option >Ordenar por Población</option>
+                <option value='Mayor'>Mayor Población</option>
+                <option value='Menor'>Menor Población</option>
             </select>
 
-            <select className='filterAndOrder' onChange={(e) => handleFilterActivity(e)}>
-                <option value="todos"> Actividades </option>
-                {activities.map((v) => (
-                    <option value={v.name}>{v.name}</option>
-                ))}
+            <select onChange={(e) => handleFilterActivity(e)}> 
+            <option value="All"> Tipo de actividades </option>
+            <option value="Montar en bici"> Montar en bici</option>
+            <option value="Saltar"> Saltar </option>
             </select>
+
             
 
         <select onChange={(e) => handleFilterContinent(e)}>
@@ -101,7 +117,7 @@ export default function Home(){
             {
                 
                     currentCountries?.map(el =>{
-
+                       
                     return(
                     
                     <fragment>  
@@ -122,6 +138,9 @@ export default function Home(){
 
             
            </div>
+
+           <br></br>
+           <br></br>           
         </div>
     )
 }
