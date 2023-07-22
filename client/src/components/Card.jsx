@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Card.module.css";
 
-export default function countriesCard ({id, name, imgbandera, Continente, capital, Subregion, area, Poblacion }){
+export default function countriesCard ({id, name, imgbandera, Continente, capital, Subregion, area, poblacion }){
     return (
 
         <div className={style.card}>
@@ -9,6 +9,9 @@ export default function countriesCard ({id, name, imgbandera, Continente, capita
             <div className={style.contenido}>
             <h1 className={style.h1}>{name} </h1>
             <h5 className={style.h5}>Continente: {Continente} </h5>
+            <h5 className={style.h5}>Capital: {capital}</h5>    
+            <h5 className={style.h5}>Poblacion: {poblacion}</h5>
+            
             </div>
         </div>
     );

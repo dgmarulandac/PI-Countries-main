@@ -22,7 +22,7 @@ router.get('/countries', async(req, res) =>{
 
 
 router.get('/countries/:id', async (req, res) =>{
-    const id = req.params.id;
+    const {id }= req.params;
     let allCountries = await getDbInfo();//hacemos la llamada de base de datos
     
     if (id) { 

@@ -7,13 +7,14 @@ import Card from "./Card";
 import Paginado from "./Paginado";
 import style from "./Card.module.css";
 import styles from "./Home.module.css";
+import SearchBar from "./SerchBar";
 
 
 export default function Home(){
     const dispatch =useDispatch();
-    //const allactivities = useSelector((state) =>state.activities);
+    const allactivities = useSelector((state) =>state.activities);
     const allCountries = useSelector((state) =>state.countries);
-    const [orden, setOrder] = useState('');
+    const [,setOrder] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage] = useState(10);
     const indexLastCountrie = currentPage * countriesPerPage; 
@@ -30,6 +31,7 @@ export default function Home(){
 
     useEffect (() =>{
         dispatch(getCountries());
+        dispatch(getActivities())
         
     },[dispatch])
 
@@ -63,46 +65,55 @@ export default function Home(){
     };
     return(
         <div className={styles.Home}>
-           <Link to= '/activities'>Crear actividad</Link> 
+            <br/>
            <h1>AGUANTE PAISES</h1>
-           <button onClick={e => {handleClick(e)}}>
-            Volver a cargar los paises
-           </button>
+           <div className={styles.nav}>
+           <Link to= '/activities'><button>Crear actividad</button></Link> 
+           <button onClick={e => {handleClick(e)}}> Volver a cargar los paises</button>
+           <SearchBar/>
+           </div>
+           
 
            <div>
-            
-            <select onChange={(e) => handleSortName(e)}>
-                <option>Ordenar Paises por Nombre</option>
-                <option value='asc'>Ascendente</option>
-                <option value='des'>Descendente</option>
-            </select>
+           <br></br>
+           <br></br>
+            <div className={styles.box}>
+                <select onChange={(e) => handleSortName(e)}>
+                    <option label="Ordenar Paises por Nombre"></option>
+                    <option value='asc'>Ascendente</option>
+                    <option value='des'>Descendente</option>
+                </select>
+                
 
-            <select onChange={(e) => handleSortPopulation(e)}>
-                <option >Ordenar por Población</option>
-                <option value='Mayor'>Mayor Población</option>
-                <option value='Menor'>Menor Población</option>
-            </select>
+                <select onChange={(e) => handleSortPopulation(e)}>
+                    <option >Ordenar por Población</option>
+                    <option value='Mayor'>Mayor Población</option>
+                    <option value='Menor'>Menor Población</option>
+                </select>
 
-            <select onChange={(e) => handleFilterActivity(e)}> 
-            <option value="All"> Tipo de actividades </option>
-            <option value="Montar en bici"> Montar en bici</option>
-            <option value="Saltar"> Saltar </option>
-            </select>
+                <select onChange={(e) => handleFilterActivity(e)}> 
+                <option> Actividades</option>
+                {allactivities.map((v) => (
+                  <option value={v.name}>{v.name}</option>
+                ))}
+                </select>
 
-            
+                
 
-        <select onChange={(e) => handleFilterContinent(e)}>
-          <option value="continent">Continentes</option>
-          <option value="All">Todos</option>
-          <option value="Africa">Africa</option>
-          <option value="Antarctica">Antartida</option>
-          <option value="North America">America del Norte</option>
-          <option value="South America">America del Sur</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europa</option>
-          <option value="Oceania">Oceania</option>
-        </select>
+                <select onChange={(e) => handleFilterContinent(e)}>
+                <option value="continent">Continentes</option>
+                <option value="All">Todos</option>
+                <option value="Africa">Africa</option>
+                <option value="Antarctica">Antartida</option>
+                <option value="North America">America del Norte</option>
+                <option value="South America">America del Sur</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europa</option>
+                <option value="Oceania">Oceania</option>
+                </select>
+            </div>
 
+           
            
             <Paginado
             
@@ -117,18 +128,20 @@ export default function Home(){
             {
                 
                     currentCountries?.map(el =>{
-                       
+                        
                     return(
                     
-                    <fragment>  
-                    <Link to={"/home/"}>
+                    <div>  
+                    <Link to={"/home/" + el.id}>
                     <Card
                     imgbandera = {el.imgbandera} 
                     name = {el.name} 
                     Continente = {el.continente} 
+                    capital={el.capital}
+                    poblacion={el.poblacion}
                     />
                     </Link>
-                    </fragment>
+                    </div>
                   
                     )  
 
