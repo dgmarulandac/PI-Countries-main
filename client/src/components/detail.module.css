@@ -20,6 +20,14 @@ body{
 
 }
 
+.h2{
+  text-align: center;
+  font-size: 20px;
+  color: #faf9f9;
+ margin-top: -20px;
+
+}
+
 .contenido{
     background-color: rgba(240, 248, 255, 0.569);
     border-radius: 20px;
@@ -44,7 +52,7 @@ body{
 
 .countryDetail{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     width: 400px;
     height: 500px;
@@ -59,9 +67,33 @@ body{
     
 }
 
+.countryActivity{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  gap: 30px;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
+  
+
+  
+  
+}
+.cardActivity{
+  margin-top: 50px;
+  left: -20pxpx;
+  width: 300px;
+  height: 200px;
+  padding: 40px;
+  background: rgba(222, 144, 9, 0.645);
+  box-sizing: border-box;
+  box-shadow: 20px 40px 50px rgba(158, 90, 7, 0.712);
+  border-radius: 10px;
+}
+
 .loader {
-    width: 80px;
-    height: 50px;
+    width: 200px;
+    height: 100px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -76,14 +108,15 @@ body{
     top: 0;
     padding: 0;
     margin: 0;
-    color: #020203;
+    color: #0b0b0b;
     animation: text_713 3.5s ease both infinite;
-    font-size: .8rem;
+    font-size:30px;
+    font-weight: bold;
     letter-spacing: 1px;
   }
   
   .load {
-    background-color: rgba(222, 144, 9, 0.645);
+    background-color: rgba(245, 243, 241, 0.645);
     border-radius: 50px;
     display: block;
     height: 16px;
@@ -99,7 +132,7 @@ body{
     content: "";
     width: 100%;
     height: 100%;
-    background-color: rgba(222, 144, 9, 0.645);
+    background-color: rgba(112, 109, 105, 0.645);
     border-radius: inherit;
     animation: loading2_713 3.5s ease both infinite;
   }

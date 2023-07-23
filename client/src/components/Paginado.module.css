@@ -9,12 +9,13 @@
 .ul {
   padding: 0 0 0 0;
   background-color: rgba(228, 173, 45, 0.558);
-  width: 70vw;
+  width: 75vw;
   height: 100%;
   display: flex;    
   justify-content: center;
   align-items: center;
   list-style: none;
+  border-radius: 10px;
 }
 
 .numeroPaginado {
@@ -33,4 +34,6 @@
 
 .numeroPaginado:hover{
   background-color:#a62f2f;
+  color: #fdfdff;
+  font-weight: bold;
 }

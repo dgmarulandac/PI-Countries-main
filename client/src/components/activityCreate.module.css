@@ -1,0 +1,235 @@
+.containerC{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 20px;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+}
+.containerC1{
+    background-color: #fff;
+    width: 100px;
+    height: 110px;
+    border-radius: 20px;
+     }
+
+.buttonDelete {
+        margin: 12px;
+        height: 30px;
+        width: 70px;
+        border-radius: 10px;
+        background: #f6f3f3;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Damion', cursive;
+        border: none;
+        font-size: 16px;
+        color: rgb(4, 4, 4);
+        transition: 500ms;
+      }
+      
+.buttonDelete:hover {
+        box-shadow: -5px -5px 15px #f06d6d, 5px 5px 15px #f07272, inset 5px 5px 10px #ee7272, inset -5px -5px 10px #f57272;
+        color: #f60808;
+        transition: 500ms;
+      }
+
+.label1{
+    color: #e4e0e0;
+    font-size: 18px;
+    margin-right: 20px;    
+   
+}
+
+.select1{
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width:100%;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color:#fff; 
+}
+
+.select1:focus{
+    border:none;	
+    outline:none;
+    border-bottom:1px solid #f7f7f7;	
+}
+
+
+.op1{
+    background-color: rgba(0,0,0,.9);
+    border-color: rgba(0,0,0,.9);
+}
+
+.divDificulty{
+    align-self: start;
+    position: relative;
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.divTemporada{
+    align-self: start;
+    position: relative;
+    text-align: start;
+    margin-bottom: 20px;
+}
+.ButtonCrear {
+  background-color: white;
+  margin-top: 30px;
+  height: 50px;
+  color: black;
+  border-radius: 10em;
+  font-size: 16px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 4em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.ButtonCrear:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+};
+
+.ButtonCrear:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+.loginbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    margin: 20px auto;
+    transform: translate(-50%, -55%);
+    background: rgba(0,0,0,.9);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .loginbox p:first-child {
+    margin: 10px 0 10px;
+    padding: 0;
+    color: #e46a18;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .loginbox h1:first-child {
+    margin: 10px 0 10px;
+    padding: 0;
+    color: #f6f5f5;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .loginbox .inputbox {
+    position: relative;
+  }
+  
+  .loginbox .inputbox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  
+  
+  .loginbox .inputbox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .loginbox .inputbox input:focus ~ label,
+  .loginbox .inputbox input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+  }
+
+/*Styles CheckBoxes*/
+  .container {
+    --input-focus: #000000;
+    --input-out-of-focus: #fdfdfd;
+    --bg-color: #fff;
+    --bg-color-alt: #666;
+    --main-color: #323232;
+    position: relative;
+    cursor: pointer;
+    display:inline-block;  
+    margin: 10px; 
+    color: #e4e0e0;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    
+    
+  }
+  
+  .container input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkmark {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--input-out-of-focus);
+    transition: all 0.3s;
+  }
+  
+  .container input:checked ~ .checkmark {
+    background-color: var(--input-focus);
+  }
+  
+  .checkmark:after {
+    content: "";
+    width: 7px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    display: none;
+    border: solid var(--bg-color);
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+  
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  
+  

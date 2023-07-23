@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {postActivities, getActivities, getCountries} from '../actions/index.js';
 import {useDispatch, useSelector} from 'react-redux';
+import style from './activityCreate.module.css'
 
 
 
@@ -74,63 +75,70 @@ export  default function ActivityCreate() {
         })
     }  
     return(
-        <div>
+        <div >
             <Link to='home'><button>Home</button></Link>
+
+            <div className={style.loginbox}>
             <h1>Crea tu Actividad</h1>
 
             <form onSubmit={(e) =>handleSubmit(e)}>
-                <div>
-                    <label>Nombre: </label>
-                    <input type='text' value={input.name} name='name'  pattern="[a-zA-Z ]{2,254}"placeholder='Ingresar solo letras' onChange={handleChange} required/>
+                <div className={style.inputbox}>
                     
-                </div>
-                <div>
-                    <label>Seleccion Dificultad: </label>
-                    <label><input type="checkbox" value='1' name='1' onChange={handleCheckBox}/>1</label>
-                    <label><input type="checkbox" value='2' name='2' onChange={handleCheckBox}/>2</label>
-                    <label><input type="checkbox" value='3' name='3' onChange={handleCheckBox}/>3</label>
-                    <label><input type="checkbox" value='4' name='4' onChange={handleCheckBox}/>4</label>
-                    <label><input type="checkbox" value='5' name='5' onChange={handleCheckBox}/>5</label>
-                    
-                </div>
-                <div>
-                    <label>Duracion: </label>
-                    <input type="int" value={input.Duration} name='Duration' pattern="[0-9]{1,15}"placeholder='Ingresa Solo Numeros' onChange={handleChange} required />
-                    <label> Horas</label>
+                    <input type='text' value={input.name} name='name'  pattern="[a-zA-Z ]{2,254}" onChange={handleChange} required/>
+                    <label>Ingresar Nombre Actividad</label>
                 </div>
                 
-                <div>
-                    <label>Seleccion Temporada</label>
-                    <select name="Seasons" value={input.Seasons} onChange={handleChange} required>
-                        <option> Temporada </option>
-                        <option value='Invierno'>Invierno</option>
-                        <option value='Verano'>Verano</option>
-                        <option value='Otoño'>Otoño</option>
-                        <option value='Primavera'>Primavera</option>
+                <div className={style.divDificulty}>
+                    <label className={style.label1}>Seleccione Dificultad: </label>
+                    <label className={style.container}><input checked={style.checked} type="checkbox" value='1' name='1' onChange={handleCheckBox}/> <div className={style.checkmark}></div>1</label>
+                    <label className={style.container}><input checked={style.checked} type="checkbox" value='2' name='2' onChange={handleCheckBox}/> <div className={style.checkmark}></div>2</label>
+                    <label className={style.container}><input checked={style.checked} type="checkbox" value='3' name='3' onChange={handleCheckBox}/> <div className={style.checkmark}></div>3</label>
+                    <label className={style.container}><input checked={style.checked} type="checkbox" value='4' name='4' onChange={handleCheckBox}/> <div className={style.checkmark}></div>4</label>
+                    <label className={style.container}><input checked={style.checked} type="checkbox" value='5' name='5' onChange={handleCheckBox}/> <div className={style.checkmark}></div>5</label>
+                    
+                </div>
+                <div className={style.inputbox}>
+                    <input type="int" value={input.Duration} name='Duration' pattern="[0-9]{1,15}" onChange={handleChange} required />
+                    <label>Ingrese Duración acividad</label>
+                    
+                </div>
+                
+                <div className={style.divTemporada}>
+                    <label className={style.label1}>Seleccion Temporada</label>
+                    <select className={style.select1} name="Seasons" value={input.Seasons} onChange={handleChange} required>
+                        <option className={style.op1} > Temporada </option>
+                        <option  className={style.op1} value='Invierno'>Invierno</option>
+                        <option  className={style.op1} value='Verano'>Verano</option>
+                        <option  className={style.op1} value='Otoño'>Otoño</option>
+                        <option  className={style.op1} value='Primavera'>Primavera</option>
                     </select>
                 </div>
 
                <div>
-                    <select onChange={handleSelect}>
+                    <select  className={style.select1}onChange={handleSelect}>
                         <option> Paises</option>
                         {allCountries.map((v) => (
-                        <option value={v.id}>{v.name}</option>
+                        <option className={style.op1} value={v.id}>{v.name}</option>
                         ))}
                     </select>
                 </div>
 
+                <button className={style.ButtonCrear}>Crear personaje</button> 
                 
-
-                <button type='submit'>Crear persoje</button> 
+                <div className={style.containerC}>
                 {
                     input.countryId.map((countries) => (
-                        <div className='cancelCountry'>
+                        <div className={style.containerC1}>
                             <p>{countries}</p>
-                            <button className='buttonX' onClick={() => handleDelete(countries)}>x</button>
+                            <button className={style.buttonDelete} onClick={() => handleDelete(countries)}>Eliminar</button>
+                              
                         </div>))
-                }                                           
+                } 
+                </div>                                          
 
             </form>
+
+            </div>
         </div>
 
 

@@ -1,9 +1,26 @@
-.Home {
+/* .Home {
     background-image: url(../img/Fondo\ Home.jpg);
     background-size: cover;
     background-repeat: repeat;
+    position: relative;
     
     
+} */
+
+.buttonNav{
+  border-radius: 10px;
+  background-color: rgba(227, 136, 24, 0.912);
+  border: none;
+  width: 230px;
+  height: 40px;
+  font-weight: bold;
+  font-family: 'Lucida Sans';
+}
+
+.buttonNav:hover {
+  background-color: rgb(130, 80, 9);
+  color: aliceblue;
+  border-color: black;
 }
 .nav{
   position: relative;
@@ -13,10 +30,11 @@
     gap: 10px;
     justify-content: center;
     transform: translate(-50%, -50%);
-    background-color: rgba(193, 37, 37, 0.62);
-    width: 50%;
-    height: 30px; 
+    background-color: rgba(193, 163, 98, 0.708);
+    width: 75%;
+    height: 60px; 
     align-items: center;
+    border-radius: 10px;
     
 }
 
@@ -38,11 +56,17 @@
     width: 250px;
     height: 45px;
     border: none;
-    font-size: 16px;
+    font-size: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     -webkit-appearance: button;
     appearance: button;
     outline: none;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  .box select:hover{
+    background-color: azure;
   }
   
  

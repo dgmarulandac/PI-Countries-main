@@ -8,6 +8,7 @@ import Paginado from "./Paginado";
 import style from "./Card.module.css";
 import styles from "./Home.module.css";
 import SearchBar from "./SerchBar";
+import NavBar from "./navBar";
 
 
 export default function Home(){
@@ -64,13 +65,17 @@ export default function Home(){
         setOrder(`Ordenado ${e.target.value}`);
     };
     return(
+        
         <div className={styles.Home}>
-            <br/>
-           <h1>AGUANTE PAISES</h1>
+          
+           <br />
+           <br />
            <div className={styles.nav}>
-           <Link to= '/activities'><button>Crear actividad</button></Link> 
-           <button onClick={e => {handleClick(e)}}> Volver a cargar los paises</button>
+           
+           <Link to= '/activities'><button className={styles.buttonNav}>Crear actividad</button></Link> 
+           <button className={styles.buttonNav} onClick={e => {handleClick(e)}}> Volver a cargar los paises</button>
            <SearchBar/>
+           
            </div>
            
 

@@ -1,0 +1,26 @@
+.buttonNav{
+    border-radius: 10px;
+    background-color: rgba(227, 136, 24, 0.912);
+    border: none;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    font-family: 'Lucida Sans';
+    margin-left: 10px;
+    
+  }
+  
+  .buttonNav:hover {
+    background-color: rgb(130, 80, 9);
+    color: aliceblue;
+    border-color: black;
+  }
+
+ .inputSerch{
+  border-radius: 10px;
+  height: 30px;
+  background-color: blanchedalmond;
+  border: none;
+  color: black;
+  font-size: 18px;
+ } 
