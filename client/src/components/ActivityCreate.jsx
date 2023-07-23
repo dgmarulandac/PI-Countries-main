@@ -3,6 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import {postActivities, getActivities, getCountries} from '../actions/index.js';
 import {useDispatch, useSelector} from 'react-redux';
 import style from './activityCreate.module.css'
+import NavBar from './navBar.jsx'
 
 
 
@@ -76,9 +77,10 @@ export  default function ActivityCreate() {
     }  
     return(
         <div >
-            <Link to='home'><button>Home</button></Link>
-
+            <NavBar/>
+            
             <div className={style.loginbox}>
+            
             <h1>Crea tu Actividad</h1>
 
             <form onSubmit={(e) =>handleSubmit(e)}>

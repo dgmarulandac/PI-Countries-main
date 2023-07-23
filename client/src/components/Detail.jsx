@@ -4,6 +4,7 @@ import {getDetail} from '../actions/index.js';
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect } from 'react';
 import style from './detail.module.css'
+import NavBar from './navBar.jsx';
 
 
 
@@ -20,7 +21,8 @@ export default function Detail(props){
 
     return (
         <div className={style.container}>
-           
+
+           <NavBar/>
             {
                     myCountry.length >0 ?
                     <div className={style.countryDetail}>
@@ -56,9 +58,7 @@ export default function Detail(props){
                                     <span className={style.load}></span>
                                 </div>
             }
-           <Link to='/home'>
-            <button>Volver</button>
-           </Link>
+           
         </div>
     )
 }
