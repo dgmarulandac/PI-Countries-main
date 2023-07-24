@@ -1,11 +1,26 @@
 import React, {useState, useEffect} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {postActivities, getActivities, getCountries} from '../actions/index.js';
 import {useDispatch, useSelector} from 'react-redux';
 import style from './activityCreate.module.css'
 import NavBar from './navBar.jsx'
 
 
+function validate(input) {
+    let errors = {};
+    if (!input.name) {
+      errors.name = "Debe completar este campo";
+    } else if (!input.duration) {
+      errors.duration = "Debe completar este campo";
+    } else if (!input.difficulty) {
+      errors.difficulty = "Debe seleccionar la complejidad";
+    } else if (!input.season) {
+      errors.season = "Debe seleccionar una estacion";
+    } else if (input.countryId === []) {
+      errors.countryId = "Debe seleccionar un pais";
+    }
+    return errors;
+  }
 
 
 
@@ -13,6 +28,7 @@ export  default function ActivityCreate() {
     const dispatch = useDispatch()
     const history = useHistory()
     const allCountries = useSelector((state) =>state.allCountries);
+    const [errors, setErrors] = useState({});
 
     
     const [input, setInput] = useState({
@@ -32,7 +48,12 @@ export  default function ActivityCreate() {
         setInput({
             ...input,
             [e.target.name] : e.target.value
-        })
+        });
+        setErrors(
+            validate({
+              ...input,
+              [e.target.name]: e.target.value,
+            }));
         
     }
 
@@ -41,7 +62,8 @@ export  default function ActivityCreate() {
             setInput({
                 ...input,
                 Dificulty: e.target.value
-            })
+            });
+            
         }
         console.log(input)
     }
@@ -56,6 +78,11 @@ export  default function ActivityCreate() {
 
     function handleSubmit(e){
         e.preventDefault();
+        if (input.name === "" ||
+        input.Duration === "" ||
+        input.Dificulty === "" ||
+        input.Seasons === "" ||
+        input.countryId.length === 0) return alert('Debe llenar los campos');
         console.log(input)
         dispatch(postActivities(input))
         alert("Actividad Creada!!")
@@ -85,9 +112,9 @@ export  default function ActivityCreate() {
 
             <form onSubmit={(e) =>handleSubmit(e)}>
                 <div className={style.inputbox}>
-                    
                     <input type='text' value={input.name} name='name'  pattern="[a-zA-Z ]{2,254}" onChange={handleChange} required/>
-                    <label>Ingresar Nombre Actividad</label>
+                    <label>Ingresar Nombre Actividad (Solo letras)</label>
+                    {errors.name && <p className="e">{errors.name}</p>}
                 </div>
                 
                 <div className={style.divDificulty}>
@@ -97,12 +124,13 @@ export  default function ActivityCreate() {
                     <label className={style.container}><input checked={style.checked} type="checkbox" value='3' name='3' onChange={handleCheckBox}/> <div className={style.checkmark}></div>3</label>
                     <label className={style.container}><input checked={style.checked} type="checkbox" value='4' name='4' onChange={handleCheckBox}/> <div className={style.checkmark}></div>4</label>
                     <label className={style.container}><input checked={style.checked} type="checkbox" value='5' name='5' onChange={handleCheckBox}/> <div className={style.checkmark}></div>5</label>
-                    
+                    {errors.Dificulty && <p className="e">{errors.Dificulty}</p>}
                 </div>
+
                 <div className={style.inputbox}>
                     <input type="int" value={input.Duration} name='Duration' pattern="[0-9]{1,15}" onChange={handleChange} required />
-                    <label>Ingrese Duración acividad</label>
-                    
+                    <label>Ingrese Duración acividad (Solo Numeros/Horas)</label>
+                    {errors.Duration && <p className="e">{errors.Duration}</p>}
                 </div>
                 
                 <div className={style.divTemporada}>
@@ -114,8 +142,9 @@ export  default function ActivityCreate() {
                         <option  className={style.op1} value='Otoño'>Otoño</option>
                         <option  className={style.op1} value='Primavera'>Primavera</option>
                     </select>
+                    {errors.Seasons && <p className="e">{errors.Seasons}</p>}
                 </div>
-
+                    {errors.countryId && <p className="e">{errors.countryId}</p>}
                <div>
                     <select  className={style.select1}onChange={handleSelect}>
                         <option> Paises</option>

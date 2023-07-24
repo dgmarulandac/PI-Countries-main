@@ -4,6 +4,7 @@ import landingPage from './components/LandingPage'
 import Home from './components/HomePage';
 import ActivityCreate from './components/ActivityCreate'
 import Detail from './components/Detail';
+import Activity from './components/AcivitysHome';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
        <Route exact path = '/home' component={Home}/>
        <Route exact path ='/Activities' component ={ActivityCreate}/>
        <Route exact path ='/home/:id' component ={Detail}/>
+       <Route exact path ='/Activity' component ={Activity}/>
       </Switch>
       
     </div>

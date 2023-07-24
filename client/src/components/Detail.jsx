@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {getDetail} from '../actions/index.js';
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect } from 'react';

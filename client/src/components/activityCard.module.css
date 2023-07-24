@@ -1,0 +1,60 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  ;
+    gap: 30px;
+    margin: 20px;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+    
+}
+
+.img{
+    margin-top: 15px;
+    border-radius: 30px;
+
+}
+
+.h1{
+   text-align: center;
+   font-size: 20px;
+   color: #000;
+   text-underline-offset: none;
+   
+
+}
+
+.contenido{
+    background-color: rgba(240, 248, 255, 0.569);
+    border-radius: 20px;
+    margin-left: 50px;
+    
+    width: 300px;
+    height: 200px;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.h5{
+    color: rgb(6, 6, 6);
+    margin-top: 30px;
+    
+    text-decoration-line: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.card{
+    border: solid 1px gray;
+    border-radius: 20px;
+    flex-direction: column;
+    width: 400px;
+    height: 300px;
+    background-color: rgba(228, 173, 45, 0.39);
+    
+}
+
+
+   

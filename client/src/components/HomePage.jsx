@@ -68,8 +68,7 @@ export default function Home(){
         
         <div className={styles.Home}>
           
-           <br />
-           <br />
+           <NavBar/>
            <div className={styles.nav}>
            
            <Link to= '/activities'><button className={styles.buttonNav}>Crear actividad</button></Link> 

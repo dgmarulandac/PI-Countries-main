@@ -3,7 +3,7 @@
   /* Position the navbar container inside the image */
   .container {
     position: relative;
-    margin: 20px;
+    margin-bottom: 40px;
     width: auto;
     
   }
@@ -25,13 +25,19 @@
     font-weight: bold;
   }
 
+  .logo{
+    display: inline-block;
+    vertical-align: middle;
+    
+  }
+
   .topnav h1 {
     float: right;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
     margin-left: 50px;
   }
