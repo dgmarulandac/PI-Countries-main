@@ -8,6 +8,7 @@ import style from './activityCard.module.css';
 export default function ActivitiesList() {
   
   const myActivity = useSelector((state) => state.activities);
+  
 
  
 
@@ -28,9 +29,14 @@ export default function ActivitiesList() {
                 Duration={acc.Duration}
                 Seasons={acc.Seasons}
                 Dificulty={acc.Dificulty}
-                countryId={acc.countryId}
+                
               />
-            </div> 
+
+              
+            </div>
+
+            
+
           )
         })}
       </div>

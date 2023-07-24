@@ -11,7 +11,7 @@ export default function activityCard ({id, name, Dificulty, Duration, Seasons, c
             <h5 className={style.h5}>Dificultad: {Dificulty} </h5>
             <h5 className={style.h5}>Duración Actividad: {Duration} Horas</h5>    
             <h5 className={style.h5}>Temporada: {Seasons}</h5>
-            <h5>Id Paises: {countryId}</h5>
+            
             
             </div>
         </div>

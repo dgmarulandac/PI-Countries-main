@@ -10,10 +10,10 @@ export default function navBar(){
         <div>
              <div className={style.container}>
                 <div className={style.topnav}>
-                <a className={style.logo}><Link to='/home'><img  src="img/navimg.jpg" />App Contries</Link></a>
-                <a><Link to='/home'>Home</Link></a>
-                <a><Link to='/activities'>Crear Actividad</Link></a>
-                <a><Link to='/activity'>Actividades</Link></a>
+                <a href="/#" className={style.logo}><Link to='/home'><img  src="img/navimg.jpg" alt="img"/>App Contries</Link></a>
+                <a href="/#"><Link href="/#" to='/home'>Home</Link></a>
+                <a href="/#"><Link href="/#" to='/activities'>Crear Actividad</Link></a>
+                <a href="/#"><Link  to='/activity' href="#" >Actividades</Link></a>
                 
                 <h1>By Daniel Marulanda Cruz</h1>
                 </div>

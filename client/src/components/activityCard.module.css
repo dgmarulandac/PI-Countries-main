@@ -28,21 +28,24 @@
     background-color: rgba(240, 248, 255, 0.569);
     border-radius: 20px;
     margin-left: 50px;
-    
     width: 300px;
     height: 200px;
     align-items: center;
     text-align: center;
-    align-items: center;
     position: relative;
 }
 
 .h5{
     color: rgb(6, 6, 6);
-    margin-top: 30px;
-    
+    margin-top: 40px;
+    vertical-align: center;
     text-decoration-line: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans Regular';
+    font-size: 18px;
+    position: relative;
+    top: 20px;
+    
+   
 
 }
 
