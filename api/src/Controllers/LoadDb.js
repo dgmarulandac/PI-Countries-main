@@ -3,7 +3,7 @@ const {Country, Activity} = require ('../db.js');
 const { API_ALL} = process.env;
 
 const getApiInfo = async () => {
-    const apiUrl = await axios.get(`https://restcountries.com/v3/all`); //llamamos el endpoint, y pones async await para que trabaje de manera asincrona
+    const apiUrl = await axios.get(`${API_ALL}`); //llamamos el endpoint, y pones async await para que trabaje de manera asincrona
     //console.log(apiUrl);
     const apiInfo = await apiUrl.data.map(e =>{
         
@@ -20,7 +20,7 @@ const getApiInfo = async () => {
     })
 
     
-    console.log(apiInfo);
+    //console.log(apiInfo);
     return apiInfo;     
 };
 
