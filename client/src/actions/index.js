@@ -24,6 +24,10 @@ export function getNameCountries(name){
     };
 }
 
+export function cleanDetail(){
+    return{type:'CLEAN_DETAIL'}
+}
+
 export function getActivities(){
     return async function(dispatch){
          var json = await axios.get('http://localhost:3001/activities');

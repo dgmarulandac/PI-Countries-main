@@ -9,9 +9,12 @@ export default function SearchBar (){
     const dispatch = useDispatch();
     const [name, setName] = useState("");
     
+    
+    
     function handleInputChange (e){
         e.preventDefault()
         setName(e.target.value)
+        
         console.log(name)
     }
 
@@ -20,13 +23,15 @@ export default function SearchBar (){
         if (name.length === 0) return alert('Debe colocar un Pais');
         dispatch(getNameCountries(name))
         setName('')
-
+        
+        
+    
     }
 
     return(
 
         <div>
-            <input className={style.inputSerch} type='text' value={name} placeholder="Buscar..." onChange={(e) => handleInputChange(e)}/>
+            <input className={style.inputSerch} type='text' value={name}  pattern="[a-zA-Z ]{2,254}" placeholder="Buscar..." onChange={(e) => handleInputChange(e)} required/>
 
             <button className={style.buttonNav} type="submit" value="" onClick={(e) => handleSubmit(e)}>Buscar</button>
             

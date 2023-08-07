@@ -3,8 +3,9 @@ import style from "./activityCard.module.css";
 
 export default function activityCard ({id, name, Dificulty, Duration, Seasons, countryId}){
     return (
-
+        
         <div className={style.card}>
+            
             <h1 className={style.h1}>{name} </h1>
             <div className={style.contenido}>
             

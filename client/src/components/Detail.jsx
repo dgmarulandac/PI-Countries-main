@@ -1,5 +1,5 @@
 import React from 'react';
-import {getDetail} from '../actions/index.js';
+import {cleanDetail, getDetail} from '../actions/index.js';
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect } from 'react';
 import style from './detail.module.css'
@@ -14,6 +14,11 @@ export default function Detail(props){
 
     useEffect(() => {
         dispatch(getDetail(props.match.params.id));
+
+        return ()=>{
+            dispatch(cleanDetail())
+        }
+
     },[dispatch, props.match.params.id]);
 
     const myCountry = useSelector((state) => state.detail);

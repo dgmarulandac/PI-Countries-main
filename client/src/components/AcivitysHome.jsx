@@ -19,6 +19,8 @@ export default function ActivitiesList() {
         <NavBar />
       </div>
 
+      <h2 className={style.h2}>Actividades en Paises</h2>
+
       <div className={style.container}>{
       myActivity?.map((acc) => {
           return (

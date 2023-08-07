@@ -21,6 +21,12 @@ function rootReducer (state = initialState, action){
 
             };
 
+        case 'CLEAN_DETAIL':
+            return{
+                ...state,
+                detail: {}
+            }    
+
         case 'GET_DETAILS':
             return{
                 ...state,
