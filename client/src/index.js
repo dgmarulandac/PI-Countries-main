@@ -8,7 +8,7 @@ import {store} from './Store';
 import axios from 'axios';
 
 //axios.defaults.baseURL = "http://localhost:3001";
-//url deploy backend
+
 axios.defaults.baseURL = 'https://pi-henry-back.onrender.com';
 
 ReactDOM.render(
