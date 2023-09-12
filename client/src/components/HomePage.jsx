@@ -128,31 +128,45 @@ export default function Home(){
            />
 
             <hr></hr>
-
-            <div className={style.container}>
-            {
-                
-                    currentCountries?.map(el =>{
-                        
-                    return(
-                    
-                    <div>  
-                    <Link to={"/home/" + el.id}>
-                    <Card
-                    imgbandera = {el.imgbandera} 
-                    name = {el.name} 
-                    Continente = {el.continente} 
-                    capital={el.capital}
-                    poblacion={el.poblacion}
-                    />
-                    </Link>
+            
+           
+               <div className={style.container}>
+               {       
+                   currentCountries.length>0?
+                   
+                       currentCountries?.map(el =>{
+                           
+                       return(
+                       
+                       <div>  
+                       <Link to={"/home/" + el.id}>
+                       <Card
+                       imgbandera = {el.imgbandera} 
+                       name = {el.name} 
+                       Continente = {el.continente} 
+                       capital={el.capital}
+                       poblacion={el.poblacion}
+                       />
+                       </Link>
+                       </div>
+                     
+                       )  
+   
+                   }):
+                   <div id={styles.page}>
+                        <div id={styles.container}>
+                            <div id={styles.ring}></div>
+                            <div id={styles.ring}></div>
+                            <div id={styles.ring}></div>
+                            <div id={styles.ring}></div>
+                            <div id={styles.h3}>Cargando...</div>
+                        </div>
                     </div>
-                  
-                    )  
+               }
 
-                })
-            }
-        </div>  
+             </div> 
+
+           
 
             
            </div>
