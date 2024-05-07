@@ -14,9 +14,19 @@ body{
 }
 
 .h1{
-   text-align: center;
-   font-size: 20px;
-   color: #000;
+  text-align: center;
+  font-size: 40px;
+  color: #000000;
+  text-underline-offset: none;
+  font-weight: bold;
+}
+.h5{
+  color: rgb(208, 16, 16);
+  margin-top: 15px;
+  line-height: 50%;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
@@ -41,18 +51,12 @@ body{
     align-content: center; 
 }
 
-.h5{
-    color: rgb(6, 6, 6);
-    margin-top: 10px;
-    line-height: 50%;
-    text-decoration-line: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-}
+
 
 .countryDetail{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     width: 400px;
     height: 500px;
@@ -63,8 +67,6 @@ body{
     box-sizing: border-box;
     box-shadow: 20px 40px 50px rgba(158, 90, 7, 0.712);
     border-radius: 10px;
-    
-    
 }
 
 .countryActivity{
@@ -97,6 +99,7 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
+    right: 50%;
     margin: 20px auto;
     
     transform: translate(-50%, -55%);
