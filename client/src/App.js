@@ -5,6 +5,7 @@ import Home from './components/HomePage';
 import ActivityCreate from './components/ActivityCreate'
 import Detail from './components/Detail';
 import Activity from './components/AcivitysHome';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function App() {

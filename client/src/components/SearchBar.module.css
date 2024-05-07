@@ -2,6 +2,7 @@
     border-radius: 10px;
     background-color: rgba(227, 136, 24, 0.912);
     border: none;
+    align-items: end;
     width: 100px;
     height: 40px;
     font-weight: bold;
@@ -18,6 +19,8 @@
 
  .inputSerch{
   border-radius: 10px;
+  align-items: end;
+  align-self: end;
   height: 30px;
   background-color: blanchedalmond;
   border: none;

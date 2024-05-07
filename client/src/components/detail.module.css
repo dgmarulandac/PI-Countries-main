@@ -2,7 +2,7 @@ body{
    
     background-image: url('../img/Fondo\ Detail.jpg');
     background-position: absolute;
-    background-size: cover;
+    background-size: 100%;
 }
 
 .img{

@@ -69,14 +69,13 @@ export default function Home(){
         <div className={styles.Home}>
           
            <NavBar/>
-           <div className={styles.nav}>
+           {/* <div className={styles.nav}>
            
-           <Link to= '/activities'><button className={styles.buttonNav}>Crear actividad</button></Link> 
            <button className={styles.buttonNav} onClick={e => {handleClick(e)}}> Volver a cargar los paises</button>
            <SearchBar/>
            <h3 className={styles.h3}>By Daniel Marulanda</h3>
            
-           </div>
+           </div> */}
            
 
            <div>
@@ -120,13 +119,6 @@ export default function Home(){
 
            
            
-            <Paginado
-            
-            countriesPerPage={countriesPerPage}
-            allCountries={allCountries.length}
-            paginado={paginado}
-           />
-
             <hr></hr>
             
            
@@ -172,7 +164,16 @@ export default function Home(){
            </div>
 
            <br></br>
-           <br></br>           
+           <br></br> 
+            <Paginado
+            
+            countriesPerPage={countriesPerPage}
+            allCountries={allCountries.length}
+            paginado={paginado}
+           />
+
+
+                     
         </div>
     )
 }

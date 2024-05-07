@@ -84,6 +84,17 @@
     padding: 30px;
   } 
 
+  @media only screen and (max-width: 600px) {
+    .box {
+      margin-top: 70px;
+      flex-direction: column;
+      align-items: center; /* Centra los elementos en el eje vertical */
+    }
+  
+    .box select {
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+  }
   
   #page {
     position: fixed;
@@ -91,6 +102,7 @@
     align-items: center;
     top: 50%;
     left: 50%;
+    right: 50%;
   }
   
   #container {
@@ -107,8 +119,8 @@
   }
   
   #ring {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     border: 10px solid transparent;
     border-radius: 50%;
     position: absolute;

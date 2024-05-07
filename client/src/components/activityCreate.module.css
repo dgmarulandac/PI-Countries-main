@@ -8,12 +8,17 @@
     align-items: center;
 }
 .containerC1{
-    background-color: #fff;
-    width: 100px;
-    height: 110px;
+    background-color: #0b0b0b;
+    width: 70px;
+    height: 70px;
     border-radius: 20px;
      }
 
+.h2{
+  color: rgb(4, 4, 4);
+  font-size: 50px;
+  
+}
 .buttonDelete {
         margin: 12px;
         height: 30px;
@@ -35,8 +40,10 @@
         transition: 500ms;
       }
 
+
+
 .label1{
-    color: #e4e0e0;
+    color: #040404;
     font-size: 18px;
     margin-right: 20px;    
     
@@ -50,7 +57,7 @@
     width:100%;
     padding:8px 0 5px 0;
     font-size:16px;
-    color:#fff; 
+    color:#0b0b0b; 
 }
 
 .select1:focus{
@@ -61,8 +68,8 @@
 
 
 .op1{
-    background-color: rgba(0,0,0,.9);
-    border-color: rgba(0,0,0,.9);
+    background-color: rgb(230, 118, 7);
+    border-color: rgba(250, 250, 250, 0.9);
 }
 
 .divDificulty{
@@ -79,10 +86,10 @@
     margin-bottom: 20px;
 }
 .ButtonCrear {
-  background-color: white;
+  background-color: rgb(230, 118, 7);
   margin-top: 30px;
   height: 50px;
-  color: black;
+  color: rgb(255, 255, 255);
   border-radius: 10em;
   font-size: 16px;
   font-weight: 800;
@@ -91,7 +98,7 @@
   padding: 1em 4em;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  border: 1px solid black;
+  border: 1px solid rgb(251, 251, 251);
   box-shadow: 0 0 0 0 black;
 }
 
@@ -110,9 +117,9 @@
     top: 50%;
     left: 50%;
     padding: 40px;
-    margin: 20px auto;
+    margin-top: 100px;
     transform: translate(-50%, -55%);
-    background: rgba(0,0,0,.9);
+    background: rgba(222, 144, 9, 0.645);;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -146,7 +153,7 @@
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: #070707;
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #fff;
@@ -161,7 +168,7 @@
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: #100f0f;
     pointer-events: none;
     transition: .5s;
   }
@@ -170,7 +177,7 @@
   .loginbox .inputbox input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #fff;
+    color: #0a0a0a;
     font-size: 12px;
   }
 

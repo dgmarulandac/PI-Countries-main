@@ -8,6 +8,20 @@
     
     
   }
+
+  
+
+  .buttonNav{
+    border-radius: 10px;
+    background-color: rgba(227, 136, 24, 0.912);
+    border: none;
+    width: auto;
+    height: 40px;
+    font-weight: bold;
+    font-family: 'Lucida Sans';
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   
   /* The navbar */
   .topnav {

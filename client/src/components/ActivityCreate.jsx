@@ -4,24 +4,7 @@ import {postActivities, getActivities, getCountries} from '../actions/index.js';
 import {useDispatch, useSelector} from 'react-redux';
 import style from './activityCreate.module.css'
 import NavBar from './navBar.jsx'
-
-
-function validate(input) {
-    let errors = {};
-    if (!input.name) {
-      errors.name = "Debe completar este campo";
-    } else if (!input.duration) {
-      errors.duration = "Debe completar este campo";
-    } else if (!input.difficulty) {
-      errors.difficulty = "Debe seleccionar la complejidad";
-    } else if (!input.season) {
-      errors.season = "Debe seleccionar una estacion";
-    } else if (input.countryId === []) {
-      errors.countryId = "Debe seleccionar un pais";
-    }
-    return errors;
-  }
-
+import { validate } from './validate.jsx';
 
 
 export  default function ActivityCreate() {
@@ -108,12 +91,12 @@ export  default function ActivityCreate() {
             
             <div className={style.loginbox}>
             
-            <h1>Crea tu Actividad</h1>
+            <h2 className={style.h1}>Crea tu Actividad</h2>
 
             <form onSubmit={(e) =>handleSubmit(e)}>
                 <div className={style.inputbox}>
                     <input type='text' value={input.name} name='name'  pattern="[a-zA-Z ]{2,254}" onChange={handleChange} required/>
-                    <label>Ingresar Nombre Actividad (Solo letras)</label>
+                    <label >Ingresar Nombre Actividad (Solo letras)</label>
                     {errors.name && <p className="e">{errors.name}</p>}
                 </div>
                 
